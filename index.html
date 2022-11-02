@@ -18,14 +18,38 @@
     </header>
     <!--conteúdo do site-->
     <div class="conteudo-total">
-        <!--Div do quizz do usuário-->
-        <div class="quizzUsuario">
+        <!--Div para o usuário criar seu próprio quizz-->
+        <div class="quizzUsuario escondido">
             <div class="texto1">Você não criou nenhum quizz ainda :(</div>
             <button class="criarQuizz">Criar Quizz</button>
         </div>
+        <!--div onde estão os quizzes do usuário(quando ele já os criou)-->
+        <div class="quizzExistenteUsuario">
+            <!--fiz essa "seção usuario" para poder colocar o texto e o botão + lado a lado com o display flex-->
+            <div class="secaoUsuario">
+                <div class="texto3">Seus quizzes</div>
+                <ion-icon name="add-circle"></ion-icon>
+            </div> 
+            <!--div com os quizzes que o usuário criar--> 
+            <div class="quizzUser">
+                <div class="quizz">         
+                    <div class="imagemQuiz">imagem do quizz</div>
+                    <div class="nomeQuizz">nome do quizz</div>
+                </div>
+                <div class="quizz">         
+                    <div class="imagemQuiz">imagem do quizz</div>
+                    <div class="nomeQuizz">nome do quizz</div>
+                </div>
+                <div class="quizz">         
+                    <div class="imagemQuiz">imagem do quizz</div>
+                    <div class="nomeQuizz">nome do quizz</div>
+                </div>
+                
+            </div> 
+        </div>
         <!--Div com todos os quizzes-->
         <div class="todosQuizzes">  
-            <div class="texto2">Todos os quizes</div> 
+            <div class="texto2">Todos os quizzes</div> 
             <div class="quizzesDisponiveis">         
             <div class="quizz">         
                 <div class="imagemQuiz">imagem do quizz</div>
@@ -54,6 +78,8 @@
         </div>
         </div>
     </div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -17,6 +17,7 @@ header p{
     font-weight: 500;
     line-height: 43px;
 }
+
 /*conteudo total da página, sem o cabeçalho*/
 .conteudo-total{
     margin-left: auto;
@@ -26,6 +27,7 @@ header p{
     align-items: center;
     justify-content: center;
 }
+
 /*div para o usuário criar seu quizz*/
 .quizzUsuario{
     display: flex;
@@ -47,6 +49,7 @@ header p{
     font-weight: 400px;
     text-align: center;
 }
+
 /*botão de criar o quizz*/
 .criarQuizz{
     width:151px;
@@ -57,6 +60,7 @@ header p{
     border: 1px dashed #EC362D;
     border-radius: 50px;
 }
+
 /*div em que estarão o texto "todos os quizzes" e os quizzes já existentes*/
 .todosQuizzes{
     margin-left: auto;
@@ -64,6 +68,7 @@ header p{
     margin-top: 70px;
     width: 80%;
 }
+
 /*texto "todos os quizzes"*/
 .texto2{
     margin-left: 5px;
@@ -71,15 +76,16 @@ header p{
     font-weight: bold;
     font-size: 19px;
 }
+
 /*div em que estão os quizzes existentes*/
 .quizzesDisponiveis{ 
     margin-left: 5px;   
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
 }
+
 /*div de cada quizz*/
 .quizz{
     margin-right: 10px;
@@ -93,4 +99,42 @@ header p{
     height: auto;
     background-color: palevioletred;
     margin-top: 120px;
+}
+
+/*classe "escondido" para esconder a tela de quando o usuário decide criar um quizz*/
+.escondido{
+    display: none;
+}
+
+/*nessa div estão os quizes do usuário, quando criados, e a div com a "seção Usuário"*/
+.quizzExistenteUsuario{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    width: 80%;
+}
+
+/*div somente com os quizzes do usuário*/
+.quizzUser{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*criei essa div "seção usuário", com texto e ícone, para conseguir colocar o texto e o botão lado a lado com o display flex*/
+.secaoUsuario{
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+ion-icon{
+    color:#EC362D;
+    font-size: 25px;
+    margin-left: 5px;
+}
+.texto3{
+    font-weight: bold;
+    font-size: 19px;
 }
