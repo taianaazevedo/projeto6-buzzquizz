@@ -1,8 +1,42 @@
 const linkPegarListaQuizzes = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes'
+const UserQuizzesListaIds = [];
+
+function pegarUserQuizzes(){
+    let content = localStorage.getItem('listaUserQuizzes')
+    if (content){
+        let listaIds = JSON.parse(content)
+        for (let Id = 0; Id < listaIds.length; Id++) {
+            const quizz = listaIds[Id];
+            UserQuizzesListaIds.push(quizz)
+        }
+        renderizarListaUserQuizzes()
+    }
+}
+
+// Pegar a lista de quizzes no api e renderizar na tela 1
 let promise = axios.get(linkPegarListaQuizzes);
 promise.then(renderizarListaQuizzes)
 
+function renderizarListaUserQuizzes() {
+    if(UserQuizzesListaIds.length>0){
+        let linkQuizzId = "https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/ID_DO_QUIZZ"
+        const divListaQuizzUser = document.querySelector(".quizzUser")
+        divListaQuizzUser.innerHTML = ""
+        for (let i = 0; i < UserQuizzesListaIds.length; i++) {
+            const quizzId = UserQuizzesListaIds[i];
+            let linkQuizzId = `https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${quizzId}`
+            axios.get(linkQuizzId)
+                .then((response)=>{
+                    let quizz = response.data
+                    divListaQuizzUser.innerHTML+=divQuizz(quizz.title,quizz.image)
+                })
+        }
+        // falta tratar o esconder/mostrar dos conteiners caso exista quiz criados pelo usuário
+        const divConteinerQuizzUser = document.querySelector(".quizzExistenteUsuario") 
 
+    }
+    
+}
 function renderizarListaQuizzes(response) {
     let data = response.data
     const ListaDivQuizz = document.querySelector(".quizzesDisponiveis")
@@ -22,5 +56,4 @@ function divQuizz(titulo,urlImagem){
                 <div class="imagemQuiz" style='${style}'></div>
                 <div class="nomeQuizz">${titulo}</div>
             </div>`
-
 }

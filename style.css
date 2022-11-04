@@ -1,11 +1,13 @@
-*{
+* {
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
+
 /*cabeçalho*/
-header{
+header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +16,8 @@ header{
     background-color: #EC362D;
     box-shadow: 0px 3px 3px 2px rgba(0, 0, 0, 0.2);
 }
-header p{
+
+header p {
     color: #FFFFFF;
     font-size: 37px;
     font-weight: 500;
@@ -22,7 +25,7 @@ header p{
 }
 
 /*conteudo total da página, sem o cabeçalho*/
-.conteudo-total{
+.conteudo-total {
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -32,7 +35,7 @@ header p{
 }
 
 /*div para o usuário criar seu quizz*/
-.quizzUsuario{
+.quizzUsuario {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,7 +47,8 @@ header p{
     border: 1px dashed #D5D5D5;
     border-radius: 5px;
 }
-.texto1{
+
+.texto1 {
     width: 250px;
     height: 70px;
     color: #B9B9B9;
@@ -54,8 +58,8 @@ header p{
 }
 
 /*botão de criar o quizz*/
-.criarQuizz{
-    width:151px;
+.criarQuizz {
+    width: 151px;
     height: 40px;
     font-size: 21px;
     color: #EC362D;
@@ -65,15 +69,16 @@ header p{
 }
 
 /*div em que estarão o texto "todos os quizzes" e os quizzes já existentes*/
-.todosQuizzes{
+.todosQuizzes {
     margin-left: auto;
     margin-right: auto;
     margin-top: 70px;
+    margin-bottom: 160px;
     width: 80%;
 }
 
 /*texto "todos os quizzes"*/
-.texto2{
+.texto2 {
     margin-left: 5px;
     width: auto;
     font-weight: bold;
@@ -81,19 +86,38 @@ header p{
 }
 
 /*div em que estão os quizzes existentes*/
-.quizzesDisponiveis{ 
-    margin-left: 5px;   
+.quizzesDisponiveis {
+    margin-left: 5px;
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     height: 374px;
-    overflow-x: auto;
+    width:1060px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.quizzesDisponiveis::-webkit-scrollbar {
+    width: 5px;
+    height: auto;
+    background-color: #aaa;
+    visibility: hidden;
+}
+.quizzesDisponiveis:hover::-webkit-scrollbar {
+    visibility: visible;
+}
+.quizzesDisponiveis::-webkit-scrollbar-thumb {
+    background: #000;
+    visibility: hidden;
+}
+.quizzesDisponiveis:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
 }
 
 /*div de cada quizz*/
-.quizz{
-    position:relative;
+.quizz {
+    position: relative;
     margin-right: 10px;
     margin-bottom: 10px;
     width: 338px;
@@ -102,16 +126,18 @@ header p{
     border-radius: 5px;
 
 }
-.imagemQuiz{
-    width:340px;
-    height:181px;
+
+.imagemQuiz {
+    width: 340px;
+    height: 181px;
     border-radius: 5px;
 }
-.nomeQuizz{
+
+.nomeQuizz {
     color: #FFFFFF;
     font-size: 19px;
     font-weight: 400;
-    position:absolute;
+    position: absolute;
     bottom: 28px;
     left: 12px;
     line-height: 22px;
@@ -121,12 +147,12 @@ header p{
 }
 
 /*classe "escondido" para esconder a tela de quando o usuário decide criar um quizz*/
-.escondido{
+.escondido {
     display: none;
 }
 
 /*nessa div estão os quizes do usuário, quando criados, e a div com a "seção Usuário"*/
-.quizzExistenteUsuario{
+.quizzExistenteUsuario {
     margin-left: auto;
     margin-right: auto;
     margin-top: 70px;
@@ -134,7 +160,7 @@ header p{
 }
 
 /*div somente com os quizzes do usuário*/
-.quizzUser{
+.quizzUser {
     display: flex;
     flex-wrap: wrap;
     margin-top: 10px;
@@ -143,17 +169,19 @@ header p{
 }
 
 /*criei essa div "seção usuário", com texto e ícone, para conseguir colocar o texto e o botão lado a lado com o display flex*/
-.secaoUsuario{
+.secaoUsuario {
     display: flex;
     align-items: center;
     margin-left: 5px;
 }
-ion-icon{
-    color:#EC362D;
+
+ion-icon {
+    color: #EC362D;
     font-size: 25px;
     margin-left: 5px;
 }
-.texto3{
+
+.texto3 {
     font-weight: bold;
     font-size: 19px;
 }
