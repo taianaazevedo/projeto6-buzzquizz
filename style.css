@@ -25,9 +25,7 @@ header p {
 }
 
 /*conteudo total da página, sem o cabeçalho*/
-.conteudo-total {
-    margin-left: auto;
-    margin-right: auto;
+.conteudo-total{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,7 +77,6 @@ header p {
 
 /*texto "todos os quizzes"*/
 .texto2 {
-    margin-left: 5px;
     width: auto;
     font-weight: bold;
     font-size: 19px;
@@ -93,7 +90,7 @@ header p {
     flex-wrap: wrap;
     align-items: center;
     height: 374px;
-    width:1060px;
+    width: 1060px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -104,13 +101,16 @@ header p {
     background-color: #aaa;
     visibility: hidden;
 }
+
 .quizzesDisponiveis:hover::-webkit-scrollbar {
     visibility: visible;
 }
+
 .quizzesDisponiveis::-webkit-scrollbar-thumb {
     background: #000;
     visibility: hidden;
 }
+
 .quizzesDisponiveis:hover::-webkit-scrollbar-thumb {
     visibility: visible;
 }
@@ -146,10 +146,7 @@ header p {
     width: 301px;
 }
 
-/*classe "escondido" para esconder a tela de quando o usuário decide criar um quizz*/
-.escondido {
-    display: none;
-}
+
 
 /*nessa div estão os quizes do usuário, quando criados, e a div com a "seção Usuário"*/
 .quizzExistenteUsuario {
@@ -172,7 +169,6 @@ header p {
 .secaoUsuario {
     display: flex;
     align-items: center;
-    margin-left: 5px;
 }
 
 ion-icon {
@@ -184,4 +180,153 @@ ion-icon {
 .texto3 {
     font-weight: bold;
     font-size: 19px;
+}
+
+
+/*div em que estará a imagem do quizz selecionado*/
+.imagemQuizzSelecionado {
+    background-color: peru;
+    opacity: 60%;
+    width: 100%;
+    height: 227px;
+}
+
+/*página do quizz escolhido*/
+.paginaQuizzSelecionado {
+    display: flex;
+    flex-direction: column;
+    background-color: #ececec48;
+
+}
+
+/*div da pergunta, onde estarão a pergunta e as opções*/
+.caixaPergunta {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    background-color: #FFFFFF;
+    margin: 42px auto 10px auto;
+    width: 45%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textoPergunta {
+    margin-top: 20px;
+    background-color: #434CA0;
+    width: 80%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textoPergunta p {
+    font-size: 23px;
+    color: #FAFAFA;
+    text-align: center;
+}
+
+/*essa div contem as 4 opções de resposta*/
+.caixaOpcoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 85%;
+    height: 150px;
+}
+
+/*div em que estará a alternativa, com imagem e legenda*/
+.opcao {
+    background-color: plum;
+    width: 45%;
+    height: 100%;
+    margin-top: 20px;
+}
+
+.imagemOpcao {
+    background-color: aquamarine;
+    width: 100%;
+    height: 75%;
+}
+
+.legendaOpcao {
+    margin-top: 6px;
+    font-size: 20px;
+    font-weight: 500;
+    height: 25%
+}
+
+/*div em que estará o resultado do quizz, com a imagem, o nível e a descrição do nível*/
+.quizzFinalizado {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+    background-color: #FFFFFF;
+    margin: 42px auto 10px auto;
+    width: 45%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resultadoQuizz {
+    background-color: #EC362D;
+    margin-top: 20px;
+    width: 80%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultadoQuizz p {
+    font-size: 23px;
+    color: #FAFAFA;
+    text-align: center;
+}
+
+.descricaoResultado {
+    width: 80%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.imagemResultado {
+    margin-bottom: 10px;
+    background-color: yellow;
+    width: 100%;
+    height: 75%;
+
+}
+
+.textoResultado {
+    margin-bottom: 10px;
+    background-color: yellowgreen;
+    width: 100%;
+    height: 75%;
+    margin-left: 15px;
+}
+
+.reiniciarQuizz {
+    width: 250px;
+    height: 52px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #EC362D;
+    border-radius: 15px;
+    border-style: none;
+    font-size: 21px;
+    color: #FFFFFF;
+}
+
+.voltarHome {
+    margin: 16px auto 15px auto;
+    font-size: 21px;
+    color: #818181;
+}
+
+/*classe "escondido" para esconder a tela de quando o usuário decide criar um quizz*/
+.escondido {
+    display: none;
 }

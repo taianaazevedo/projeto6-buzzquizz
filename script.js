@@ -3,20 +3,22 @@ const UserQuizzesListaIds = [1,2,3];
 
 function pegarUserQuizzes(){
     let content = localStorage.getItem('listaUserQuizzes')
+    console.log(content)
     if (content){
         let listaIds = JSON.parse(content)
         for (let Id = 0; Id < listaIds.length; Id++) {
             const quizz = listaIds[Id];
             UserQuizzesListaIds.push(quizz)
         }
-        renderizarListaUserQuizzes()
     }
+    renderizarListaUserQuizzes()
 }
 
 // Pegar a lista de quizzes no api e renderizar na tela 1
 let promise = axios.get(linkPegarListaQuizzes);
 promise.then(renderizarListaQuizzes)
-renderizarListaUserQuizzes()
+promise.catch(console.log)
+pegarUserQuizzes()
 
 function renderizarListaUserQuizzes() {
     if(UserQuizzesListaIds.length>0){
@@ -32,7 +34,6 @@ function renderizarListaUserQuizzes() {
                     divListaQuizzUser.innerHTML+=divQuizz(quizz.title,quizz.image)
                 })
         }
-        // falta tratar o esconder/mostrar dos conteiners caso exista quiz criados pelo usuário
         const divConteinerQuizzUser = document.querySelector(".quizzExistenteUsuario") 
         const divConteinerUserSemQuizz = document.querySelector(".quizzUsuario") 
         divConteinerQuizzUser.classList.toggle("escondido")
